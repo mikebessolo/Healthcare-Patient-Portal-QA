@@ -1,0 +1,20 @@
+Requirement,Case ID,Automated test method(s)
+R01,TC01,test_health_without_token
+R02,TC02,test_missing_token; test_invalid_token
+R03,TC03,test_new_patient_empty_list
+R04,TC04,test_booking_persists_correct_data
+R03,TC05,test_patient_only_sees_own_records
+R05,TC06,test_unknown_provider
+R05,TC07,test_provider_type_and_boundaries
+R05,TC08,test_date_boundaries
+R05,TC09,test_missing_fields
+R04,TC10,test_cannot_assign_patient_through_body
+R05,TC11,test_invalid_json_and_shape
+R05,TC12,test_wrong_content_type
+R06,TC13,test_duplicate_booking
+R06,TC14,test_concurrent_booking_has_one_winner
+R07,TC15,test_cancel_and_rebook
+R07,TC16,test_cannot_cancel_another_patient_record
+R07,TC17,test_unknown_appointment
+R09,TC18,test_unknown_route
+R08,TC19,test_database_rejects_orphan_and_invalid_status

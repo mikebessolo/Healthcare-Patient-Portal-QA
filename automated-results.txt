@@ -1,0 +1,25 @@
+test_booking_persists_correct_data (test_api.PortalTests.test_booking_persists_correct_data) ... ok
+test_cancel_and_rebook (test_api.PortalTests.test_cancel_and_rebook) ... ok
+test_cannot_assign_patient_through_body (test_api.PortalTests.test_cannot_assign_patient_through_body) ... ok
+test_cannot_cancel_another_patient_record (test_api.PortalTests.test_cannot_cancel_another_patient_record) ... ok
+test_concurrent_booking_has_one_winner (test_api.PortalTests.test_concurrent_booking_has_one_winner) ... ok
+test_database_rejects_orphan_and_invalid_status (test_api.PortalTests.test_database_rejects_orphan_and_invalid_status) ... ok
+test_date_boundaries (test_api.PortalTests.test_date_boundaries) ... ok
+test_duplicate_booking (test_api.PortalTests.test_duplicate_booking) ... ok
+test_health_without_token (test_api.PortalTests.test_health_without_token) ... ok
+test_invalid_json_and_shape (test_api.PortalTests.test_invalid_json_and_shape) ... ok
+test_invalid_token (test_api.PortalTests.test_invalid_token) ... ok
+test_missing_fields (test_api.PortalTests.test_missing_fields) ... ok
+test_missing_token (test_api.PortalTests.test_missing_token) ... ok
+test_new_patient_empty_list (test_api.PortalTests.test_new_patient_empty_list) ... ok
+test_patient_only_sees_own_records (test_api.PortalTests.test_patient_only_sees_own_records) ... ok
+test_provider_type_and_boundaries (test_api.PortalTests.test_provider_type_and_boundaries) ... ok
+test_unknown_appointment (test_api.PortalTests.test_unknown_appointment) ... ok
+test_unknown_provider (test_api.PortalTests.test_unknown_provider) ... ok
+test_unknown_route (test_api.PortalTests.test_unknown_route) ... ok
+test_wrong_content_type (test_api.PortalTests.test_wrong_content_type) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 9.116s
+
+OK

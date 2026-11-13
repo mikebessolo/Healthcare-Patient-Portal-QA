@@ -1,0 +1,20 @@
+Case ID,Requirement,Scenario,Preconditions,Steps,Expected Result,Actual Result,Status
+TC01,R01,Health,No auth,GET /health,200; status ok,,Not Run
+TC02,R02,Authentication,None,GET /appointments without token or with wrong token,401,,Not Run
+TC03,R03,Empty list,Fresh DB,GET /appointments as A,200; [],,Not Run
+TC04,R04,Book and persist,Fresh DB,POST /appointments as A with provider 1 and future date; inspect DB,201; matching DB row,,Not Run
+TC05,R03,Patient isolation,Booking owned by A,GET /appointments as B,200; no A records,,Not Run
+TC06,R05,Unknown provider,Fresh DB,Book provider 99 with future date,404,,Not Run
+TC07,R05,Provider boundaries,Fresh DB,"Book with true, string 1, 1.5, 0, -1, null",400 each,,Not Run
+TC08,R05,Date boundaries,Fresh DB,"Try today, past, impossible date, compact date, null; then tomorrow",400 invalid; 201 tomorrow,,Not Run
+TC09,R05,Missing field,Fresh DB,POST body with only provider_id,400,,Not Run
+TC10,R04,Owner override rejected,Fresh DB,Book with extra patient_id field,400,,Not Run
+TC11,R05,Malformed body,Fresh DB,"Send malformed JSON, array, null or scalar",400,,Not Run
+TC12,R05,Content type,Fresh DB,POST with text/plain,415,,Not Run
+TC13,R06,Duplicate booking,Active slot booked,Repeat same booking,409; only one DB row,,Not Run
+TC14,R06,Concurrent booking,Fresh DB,Submit same slot simultaneously twice,One 201; one 409,,Not Run
+TC15,R07,Cancel and rebook,Booking owned by A,Cancel as A twice; rebook slot,200 twice; persisted cancelled; new 201,,Not Run
+TC16,R07,Unauthorized cancellation,Booking owned by A,Cancel as B; then list as A,404; original remains scheduled,,Not Run
+TC17,R07,Unknown appointment,Any,Cancel ID 999,404,,Not Run
+TC18,R09,Unknown route,Valid token,GET /missing,404,,Not Run
+TC19,R08,DB constraints,SQLite connection with foreign_keys ON,Insert orphan appointment and invalid status directly,IntegrityError on both,,Not Run
